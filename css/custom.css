@@ -1,0 +1,22 @@
+#mainheader {
+  margin: 20px 0px;
+  border-bottom: 1px solid black;
+}
+
+#responsedata {
+    margin-bottom: 1.5rem;
+}
+
+table {
+    margin-bottom: 0.75rem;
+    line-height: 0;
+}
+
+td {
+    border-bottom: none;
+}
+
+#errorresponse {
+    margin-bottom: 1.25rem;
+}
+

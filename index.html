@@ -1,1 +1,118 @@
-Hello World
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <!-- Traditional head elements -->
+        
+        <meta charset="UTF-8" />
+        <meta name="description" content="This is a simple application to learn building serverless applications with AWS tools like API Gateway and Lambda. It interacts with an open source weather API called 'Open Weather' and located at https://openweathermap.org/" /> 
+        <title>Weather</title>
+        
+        <!-- Third party and custom CSS files -->
+        
+        <link rel="stylesheet" href="/weather/css/normalize.css">
+        <link rel="stylesheet" href="/weather/css/skeleton.css">
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/weather/css/custom.css">
+        
+        <!-- Third party and custom JS files -->
+        
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+        <script src="/weather/js/weather.js"></script>
+        
+    </head>
+    <body>
+        <!-- Opening tag for the main container styling. -->
+        <div class="container">
+            <!-- Header section only contains a page title right now. -->
+            <header id="mainheader">
+                <div class="row">
+                    <div class="twelve columns">
+                        <h1>How is the Weather?</h1>
+                    </div>
+                </div>
+            </header>
+            <!-- Start of the main section of the page. -->
+            <main>
+                <!-- Start of the first article of the page. -->
+                <article id="request">
+                    <!-- Start of the form section on the page. -->
+                    <!-- Start of the header for the first article. -->
+                    <header>
+                        <div class="row">
+                            <div class="twelve columns">
+                                <h5>Enter a zip code below and click "Submit" to retrieve the current weather forecast.</h5>
+                            </div>
+                        </div>
+                    </header>
+                    <form id="getweather">
+                        <div class="row">
+                            <div class="three columns">
+                                <label for="zipcode">Zip Code*</label>
+                                <input class="u-full-width" type="number" name="zipcode" placeholder="12345" id="zipcode">
+                                <label for="zipcode" generated="true" class="error"></label>
+                                <input class="button button-primary" type="submit" value="Submit">
+                                <p><i>*Indicates a required field.</i></p>
+                            </div>
+                        </div>
+                    </form>
+                </article>
+                    <!-- Start of the return data section. -->
+                <article id="response" style="display:none">
+                    <header>
+                        <div class="row">
+                            <div class="twelve columns">
+                                <h4>Current Forecast</h4>
+                            </div>
+                        </div>
+                    </header>
+                    <form id="clearweather">
+                        <div id="responsedata" class="row">
+                            <table>
+                                <tr>
+                                    <td><strong>Location: </strong></td>
+                                    <td id="locationinfo"></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Forecast: </strong></td>
+                                    <td id="forecastinfo"></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Temperature: </strong></td>
+                                    <td id="tempinfo"></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wind Speed: </strong></td>
+                                    <td id="windinfo"></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Humidity: </strong></td>
+                                    <td id="humidityinfo"></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Visibility: </strong></td>
+                                    <td id="visibilityinfo"></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sunrise: </strong></td>
+                                    <td id="sunriseinfo"></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sunset: </strong></td>
+                                    <td id="sunsetinfo"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row" id="errorresponse"></div>
+                        <div class="row">
+                            <input class="button button-primary" type="submit" value="New Forecast">
+                        </div>
+                    </form>
+                </article>
+                    
+            </main>
+        <!-- Closing tag for the main container styling. -->
+        </div>
+    </body>
+</html>
